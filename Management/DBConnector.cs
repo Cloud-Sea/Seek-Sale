@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Data.Odbc;
 
 namespace Management
@@ -15,20 +12,28 @@ namespace Management
     {
         static string username = "root";
         static string password = "Try2BBest";
+
         static string connect_str = "DSN=mySQL;" + 
             "UID=" + username + ";PWD=" + password + ";";
         OdbcConnection conn;
-        
-        public void Select(string sql)
+
+        public OdbcDataReader Select(string sql)
         {
             conn = new OdbcConnection(connect_str);
             conn.Open();
             OdbcCommand cmd = new OdbcCommand(sql, conn);
             OdbcDataReader reader = cmd.ExecuteReader();
+            /*
             while(reader.Read())
             {
                 Console.Write(reader.GetBoolean(0));
             }
+            */
+            return reader;
+        }
+
+        public void Close()
+        {
             conn.Close();
         }
 

@@ -29,51 +29,44 @@
         private void InitializeComponent()
         {
             this.ManageTab = new System.Windows.Forms.TabControl();
-            this.UserTab = new System.Windows.Forms.TabPage();
-            this.ItemTypeTab = new System.Windows.Forms.TabPage();
-            this.ItemTab = new System.Windows.Forms.TabPage();
-            this.ManageTab.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.userStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ManageTab
             // 
-            this.ManageTab.Controls.Add(this.UserTab);
-            this.ManageTab.Controls.Add(this.ItemTypeTab);
-            this.ManageTab.Controls.Add(this.ItemTab);
             this.ManageTab.Location = new System.Drawing.Point(0, 28);
             this.ManageTab.Name = "ManageTab";
             this.ManageTab.SelectedIndex = 0;
             this.ManageTab.Size = new System.Drawing.Size(586, 340);
             this.ManageTab.TabIndex = 0;
             // 
-            // UserTab
+            // menuStrip1
             // 
-            this.UserTab.Location = new System.Drawing.Point(4, 22);
-            this.UserTab.Name = "UserTab";
-            this.UserTab.Padding = new System.Windows.Forms.Padding(3);
-            this.UserTab.Size = new System.Drawing.Size(578, 314);
-            this.UserTab.TabIndex = 0;
-            this.UserTab.Text = "用户管理";
-            this.UserTab.UseVisualStyleBackColor = true;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.userStrip,
+            this.itemStrip});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(584, 25);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // ItemTypeTab
+            // userStrip
             // 
-            this.ItemTypeTab.Location = new System.Drawing.Point(4, 22);
-            this.ItemTypeTab.Name = "ItemTypeTab";
-            this.ItemTypeTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ItemTypeTab.Size = new System.Drawing.Size(578, 342);
-            this.ItemTypeTab.TabIndex = 1;
-            this.ItemTypeTab.Text = "商品类别管理";
-            this.ItemTypeTab.UseVisualStyleBackColor = true;
+            this.userStrip.Name = "userStrip";
+            this.userStrip.Size = new System.Drawing.Size(68, 21);
+            this.userStrip.Text = "查找用户";
+            this.userStrip.Click += new System.EventHandler(this.userStrip_Click);
             // 
-            // ItemTab
+            // itemStrip
             // 
-            this.ItemTab.Location = new System.Drawing.Point(4, 22);
-            this.ItemTab.Name = "ItemTab";
-            this.ItemTab.Size = new System.Drawing.Size(578, 342);
-            this.ItemTab.TabIndex = 2;
-            this.ItemTab.Text = "商品管理";
-            this.ItemTab.UseVisualStyleBackColor = true;
+            this.itemStrip.Name = "itemStrip";
+            this.itemStrip.Size = new System.Drawing.Size(68, 21);
+            this.itemStrip.Text = "查找商品";
+            this.itemStrip.Click += new System.EventHandler(this.itemStrip_Click);
             // 
             // MainForm
             // 
@@ -81,20 +74,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 362);
             this.Controls.Add(this.ManageTab);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Management";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.ManageTab.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.TabControl ManageTab;
-        private System.Windows.Forms.TabPage UserTab;
-        private System.Windows.Forms.TabPage ItemTypeTab;
-        private System.Windows.Forms.TabPage ItemTab;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem userStrip;
+        private System.Windows.Forms.ToolStripMenuItem itemStrip;
 
     }
 }
