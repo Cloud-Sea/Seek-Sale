@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Management
 {
-    public partial class ItemManageForm : Form
+    public partial class ItemTypeManageForm : Form
     {
-        public ItemManageForm()
+        public ItemTypeManageForm()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void UserInfo_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

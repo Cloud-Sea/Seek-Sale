@@ -95,9 +95,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserInfoForm.resx">
-      <DependentUpon>UserInfoForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserManageForm.resx">
       <DependentUpon>UserManageForm.cs</DependentUpon>
     </EmbeddedResource>
