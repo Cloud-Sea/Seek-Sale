@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,8 +22,8 @@ namespace Management
         {
             conn = new OdbcConnection(connect_str);
             conn.Open();
-            OdbcCommand cmd = new OdbcCommand(sql, conn);
-            OdbcDataReader reader = cmd.ExecuteReader();
+            OdbcCommand command = new OdbcCommand(sql, conn);
+            OdbcDataReader reader = command.ExecuteReader();
             /*
             while(reader.Read())
             {
@@ -44,7 +45,6 @@ namespace Management
             OdbcCommand cmd = new OdbcCommand(sql, conn);
             cmd.ExecuteNonQuery();
             cmd.Dispose();
-            conn.Close();
         }
 
         public void Insert(string sql)

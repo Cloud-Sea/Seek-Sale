@@ -57,13 +57,14 @@ namespace Management
 
         private void userStrip_Click(object sender, EventArgs e)
         {
-            //UserInfoForm userInfoForm = new UserInfoForm();
-            //userInfoForm.Show();
+            UserInfoForm userInfoForm = new UserInfoForm();
+            userInfoForm.Show();
         }
 
         private void itemStrip_Click(object sender, EventArgs e)
         {
-
+            //SearchItemForm searchItemForm = new SearchItemForm();
+            //searchItemForm.Show();
         }
     }
 }

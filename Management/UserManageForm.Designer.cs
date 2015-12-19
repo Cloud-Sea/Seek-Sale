@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.userDataGridView = new System.Windows.Forms.DataGridView();
             this.Userid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserPwd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView2
+            // userDataGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.userDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Userid,
             this.UserName,
             this.UserPwd});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(530, 261);
-            this.dataGridView2.TabIndex = 0;
+            this.userDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.userDataGridView.Name = "userDataGridView";
+            this.userDataGridView.RowTemplate.Height = 23;
+            this.userDataGridView.Size = new System.Drawing.Size(530, 261);
+            this.userDataGridView.TabIndex = 0;
+            this.userDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.userDataGridView_CellValueChanged);
             // 
             // Userid
             // 
@@ -68,9 +69,10 @@
             // 
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(530, 261);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.userDataGridView);
             this.Name = "UserManageForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Load += new System.EventHandler(this.UserManageForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -80,7 +82,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView userDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Userid;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserPwd;
