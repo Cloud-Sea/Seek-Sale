@@ -8,7 +8,6 @@ using System.Data.Odbc;
 
 namespace Management
 {
-    [Serializable]
     public class DBConnector
     {
         static string username = "root";
@@ -18,10 +17,14 @@ namespace Management
             "UID=" + username + ";PWD=" + password + ";";
         OdbcConnection conn;
 
-        public OdbcDataReader Select(string sql)
+        public DBConnector()
         {
             conn = new OdbcConnection(connect_str);
             conn.Open();
+        }
+
+        public OdbcDataReader Select(string sql)
+        {
             OdbcCommand command = new OdbcCommand(sql, conn);
             OdbcDataReader reader = command.ExecuteReader();
             /*
@@ -40,8 +43,6 @@ namespace Management
 
         private void NonQuery(string sql)
         {
-            conn = new OdbcConnection(connect_str);
-            conn.Open();
             OdbcCommand cmd = new OdbcCommand(sql, conn);
             cmd.ExecuteNonQuery();
             cmd.Dispose();

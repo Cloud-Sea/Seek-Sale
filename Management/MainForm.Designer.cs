@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.userStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.itemStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userStrip,
-            this.itemStrip});
+            this.itemStrip,
+            this.addStrip});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(584, 25);
@@ -67,6 +69,13 @@
             this.itemStrip.Size = new System.Drawing.Size(68, 21);
             this.itemStrip.Text = "查找商品";
             this.itemStrip.Click += new System.EventHandler(this.itemStrip_Click);
+            // 
+            // addStrip
+            // 
+            this.addStrip.Name = "addStrip";
+            this.addStrip.Size = new System.Drawing.Size(68, 21);
+            this.addStrip.Text = "添加记录";
+            this.addStrip.Click += new System.EventHandler(this.addStrip_Click);
             // 
             // MainForm
             // 
@@ -93,6 +102,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem userStrip;
         private System.Windows.Forms.ToolStripMenuItem itemStrip;
+        private System.Windows.Forms.ToolStripMenuItem addStrip;
 
     }
 }

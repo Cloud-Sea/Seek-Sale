@@ -73,6 +73,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="数据字典.xls" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

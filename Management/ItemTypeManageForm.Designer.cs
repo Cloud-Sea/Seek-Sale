@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.itemtypeDataGridView = new System.Windows.Forms.DataGridView();
             this.ItemTypeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemtypeDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView2
+            // itemtypeDataGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.itemtypeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.itemtypeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ItemTypeid,
             this.ItemTypeName,
             this.Price});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(377, 261);
-            this.dataGridView2.TabIndex = 2;
+            this.itemtypeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.itemtypeDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.itemtypeDataGridView.Name = "itemtypeDataGridView";
+            this.itemtypeDataGridView.RowTemplate.Height = 23;
+            this.itemtypeDataGridView.Size = new System.Drawing.Size(377, 261);
+            this.itemtypeDataGridView.TabIndex = 2;
+            this.itemtypeDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemtypeDataGridView_CellValueChanged);
             // 
             // ItemTypeid
             // 
@@ -70,16 +71,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(377, 261);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.itemtypeDataGridView);
             this.Name = "ItemTypeManageForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Load += new System.EventHandler(this.ItemTypeManageForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.itemtypeDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView itemtypeDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemTypeid;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemTypeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;

@@ -66,5 +66,24 @@ namespace Management
             //SearchItemForm searchItemForm = new SearchItemForm();
             //searchItemForm.Show();
         }
+
+        private void addStrip_Click(object sender, EventArgs e)
+        {
+            if (ManageTab.SelectedIndex == 0)
+            {
+                NewUserForm userform = new NewUserForm();
+                userform.Show();
+            }
+            else if (ManageTab.SelectedIndex == 1)
+            {
+                NewItemForm typeform = new NewItemForm();
+                typeform.Show();
+            }
+            else
+            {
+                NewItemTypeForm itemform = new NewItemTypeForm();
+                itemform.Show();
+            }
+        }
     }
 }

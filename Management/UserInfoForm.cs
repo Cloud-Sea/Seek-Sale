@@ -131,10 +131,17 @@ namespace Management
             else
                 mark = "0";
             DBConnector connector = new DBConnector();
-            string sql = "UPDATE usertb SET password=" + passwordTextBox.Text + ", userlevel=" + userlevelTextBox.Text + 
-                ", certified=" + mark + ", inrank=" + inrankTextBox.Text + ", outrank=" + outrankTextBox.Text + 
-                ", nin=" + ninTextBox.Text + ", nout=" + noutTextBox.Text + ", contact=" + contactTextBox.Text + ", reliable=" + reliableTextBox.Text +
-                "WHERE username=" + username + ";";
+            string sql = "UPDATE usertb () VALUES"
+                + "\"" + passwordTextBox.Text + "\"" + ", " 
+                + userlevelTextBox.Text + ", " 
+                + mark + ", inrank=" 
+                + inrankTextBox.Text + ", " 
+                + outrankTextBox.Text + ", " 
+                + ninTextBox.Text + ", " 
+                + noutTextBox.Text + ", "
+                + "\"" + contactTextBox.Text + "\"" + ", "
+                + "\"" + reliableTextBox.Text + "\"" +
+                "WHERE username=\"" + username + "\";";
             connector.Update(sql);
             connector.Close();
             searchable();
@@ -143,7 +150,6 @@ namespace Management
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-            this.Dispose();
         }
     }
 }
