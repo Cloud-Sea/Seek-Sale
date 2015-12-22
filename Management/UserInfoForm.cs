@@ -64,7 +64,7 @@ namespace Management
         private void searchBtn_Click(object sender, EventArgs e)
         {
             username = usernameTextBox.Text;
-            string sql = "SELECT * FROM userbasictb, usertradetb WHERE userbasictb.userid=usertradetb,userid AND userbasictb.username=" + username + ";";
+            string sql = "SELECT * FROM UserView WHERE username=\"" + username + "\";";
             DBConnector connector = new DBConnector();
             OdbcDataReader reader = connector.Select(sql);
             if (reader.Read())
@@ -131,7 +131,7 @@ namespace Management
             else
                 mark = "0";
             DBConnector connector = new DBConnector();
-            string sql = "UPDATE usertb () VALUES"
+            string sql = "UPDATE UserView (passwd,userlevel,certified,inrank,outrank,nin,nout,contact,reliable) VALUES"
                 + "\"" + passwordTextBox.Text + "\"" + ", " 
                 + userlevelTextBox.Text + ", " 
                 + mark + ", inrank=" 

@@ -29,21 +29,12 @@
         private void InitializeComponent()
         {
             this.itemDataGridView = new System.Windows.Forms.DataGridView();
-            this.Itemid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.itemDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // itemDataGridView
             // 
             this.itemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.itemDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Itemid,
-            this.ItemName,
-            this.Price,
-            this.Description});
             this.itemDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemDataGridView.Location = new System.Drawing.Point(0, 0);
             this.itemDataGridView.Name = "itemDataGridView";
@@ -51,26 +42,6 @@
             this.itemDataGridView.Size = new System.Drawing.Size(505, 261);
             this.itemDataGridView.TabIndex = 4;
             this.itemDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemDataGridView_CellValueChanged);
-            // 
-            // Itemid
-            // 
-            this.Itemid.HeaderText = "Itemid";
-            this.Itemid.Name = "Itemid";
-            // 
-            // ItemName
-            // 
-            this.ItemName.HeaderText = "ItemName";
-            this.ItemName.Name = "ItemName";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
             // 
             // ItemManageForm
             // 
@@ -89,9 +60,5 @@
         #endregion
 
         private System.Windows.Forms.DataGridView itemDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Itemid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }

@@ -13,7 +13,7 @@ namespace Management
 {
     public partial class ItemTypeManageForm : Form
     {
-        string conn_str = "server=localhost; uid=root; pwd=Try2BBest; dataset=leftover";
+        string conn_str = "server=localhost;user id=root;password=Try2BBest;database=leftover";
         MySqlConnection conn;
         MySqlDataAdapter adapter;
         DataSet dataset;
@@ -30,11 +30,11 @@ namespace Management
                 conn = new MySqlConnection();
                 conn.ConnectionString = conn_str;
                 conn.Open();
-                string sql = "SELECT * from ???";
+                string sql = "SELECT * from Itemtypetb";
                 adapter = new MySqlDataAdapter(sql, conn);
                 dataset = new DataSet();
-                adapter.Fill(dataset, "userview");
-                bdsrc.DataSource = dataset.Tables["userview"];
+                adapter.Fill(dataset, "ItemTypeTb");
+                bdsrc.DataSource = dataset.Tables["ItemTypeTb"];
                 itemtypeDataGridView.DataSource = bdsrc;
             }
             catch (MySqlException ex)
@@ -66,10 +66,10 @@ namespace Management
         {
             try
             {
-                bdsrc.DataSource = dataset.Tables["userview"];
+                bdsrc.DataSource = dataset.Tables["ItemTypeTb"];
                 itemtypeDataGridView.DataSource = bdsrc;
                 MySqlCommandBuilder cmdbuilder = new MySqlCommandBuilder(adapter);
-                adapter.Update(dataset, "userview");
+                adapter.Update(dataset, "ItemTypeTb");
             }
             catch (Exception ex)
             {

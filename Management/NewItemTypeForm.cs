@@ -24,7 +24,7 @@ namespace Management
                 MessageBox.Show("商品名不可为空");
                 return;
             }
-            string sql = "INSERT INTO itemtypetb () VALUES"
+            string sql = "INSERT INTO Itemtypetb (itemname,price,itemtype,description) VALUES"
                 + "\"" + nameTextBox.Text + "\"" + ", "
                 + "\"" + priceTextBox.Text + "\"" + ","
                 + "\"" + typeComboBox.Text + "\"" + ", "

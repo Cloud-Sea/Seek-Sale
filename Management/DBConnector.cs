@@ -11,10 +11,15 @@ namespace Management
     public class DBConnector
     {
         static string username = "root";
-        static string password = "Try2BBest";
-
-        static string connect_str = "DSN=mySQL;" + 
-            "UID=" + username + ";PWD=" + password + ";";
+        static string password = "690111";
+        string connect_str = "DRIVER={MySQL ODBC 5.3 Unicode Driver};" +
+                                "SERVER=localhost;" +
+                                "DATABASE=leftover;" +
+                                "UID=root;" +
+                                "PASSWORD=690111" +
+                                "OPTION=3";
+        string msg;
+       // static string connect_str = "SERVER=localhost;PORT=3306;DATABASE=leftover; USER=root; PASSWORD=690111";
         OdbcConnection conn;
 
         public DBConnector()

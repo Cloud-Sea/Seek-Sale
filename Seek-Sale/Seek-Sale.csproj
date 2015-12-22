@@ -57,6 +57,12 @@
       <DependentUpon>CartItem.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnector.cs" />
+    <Compile Include="ItemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemCard.Designer.cs">
+      <DependentUpon>ItemCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,23 +75,29 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainModifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainModifyForm.Designer.cs">
+      <DependentUpon>MainModifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainPublishForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainPublishForm.Designer.cs">
+      <DependentUpon>MainPublishForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSearchForm.Designer.cs">
+      <DependentUpon>MainSearchForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PayForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PayForm.Designer.cs">
       <DependentUpon>PayForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PayItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PayItem.Designer.cs">
-      <DependentUpon>PayItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PositionItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PositionItem.Designer.cs">
-      <DependentUpon>PositionItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,20 +114,26 @@
     <EmbeddedResource Include="CartItem.resx">
       <DependentUpon>CartItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ItemCard.resx">
+      <DependentUpon>ItemCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainModifyForm.resx">
+      <DependentUpon>MainModifyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPublishForm.resx">
+      <DependentUpon>MainPublishForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSearchForm.resx">
+      <DependentUpon>MainSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PayForm.resx">
       <DependentUpon>PayForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PayItem.resx">
-      <DependentUpon>PayItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PositionItem.resx">
-      <DependentUpon>PositionItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

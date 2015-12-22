@@ -29,19 +29,12 @@
         private void InitializeComponent()
         {
             this.userDataGridView = new System.Windows.Forms.DataGridView();
-            this.Userid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserPwd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // userDataGridView
             // 
             this.userDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.userDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Userid,
-            this.UserName,
-            this.UserPwd});
             this.userDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userDataGridView.Location = new System.Drawing.Point(0, 0);
             this.userDataGridView.Name = "userDataGridView";
@@ -49,21 +42,6 @@
             this.userDataGridView.Size = new System.Drawing.Size(530, 261);
             this.userDataGridView.TabIndex = 0;
             this.userDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.userDataGridView_CellValueChanged);
-            // 
-            // Userid
-            // 
-            this.Userid.HeaderText = "Userid";
-            this.Userid.Name = "Userid";
-            // 
-            // UserName
-            // 
-            this.UserName.HeaderText = "UserName";
-            this.UserName.Name = "UserName";
-            // 
-            // UserPwd
-            // 
-            this.UserPwd.HeaderText = "UserPwd";
-            this.UserPwd.Name = "UserPwd";
             // 
             // UserManageForm
             // 
@@ -83,9 +61,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView userDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Userid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UserPwd;
 
     }
 }
