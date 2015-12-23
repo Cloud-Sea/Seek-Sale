@@ -63,6 +63,12 @@
     <Compile Include="ItemCard.Designer.cs">
       <DependentUpon>ItemCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemDetialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemDetialForm.Designer.cs">
+      <DependentUpon>ItemDetialForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ItemCard.resx">
       <DependentUpon>ItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemDetialForm.resx">
+      <DependentUpon>ItemDetialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

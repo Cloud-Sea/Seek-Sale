@@ -22,8 +22,11 @@ namespace Management
         {
             InitializeComponent();
         }
-
         private void ItemManageForm_Load(object sender, EventArgs e)
+        {
+            refresh();
+        }
+        public void refresh()
         {
             try
             {

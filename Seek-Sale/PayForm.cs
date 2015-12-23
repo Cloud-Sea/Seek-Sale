@@ -38,23 +38,25 @@ namespace Seek_Sale
             DBConnector connector = new DBConnector();
             string sql;
             OdbcDataReader reader;
-            sql = "SELECT * FROM user-trade WHERE ";
+            sql = "SELECT * FROM Paytb WHERE Paytb.payid in (SELECT payid in UserPayment WHERE userid=" + UserInfo.instance.userid + ");";
             reader = connector.Select(sql);
             while(reader.Read())
             {
-                string cardid = reader.GetString(-1);
-                bool quickpay = reader.GetInt32(-1) == 1 ? true : false;
-                PayItem pay = new PayItem(cardid, quickpay);
+                int payid = reader.GetInt32(0);
+                string cardid = reader.GetString(1);
+                bool quickpay = reader.GetInt32(2) == 1 ? true : false;
+                PayItem pay = new PayItem(payid, cardid, quickpay);
                 this.pays.Add(pay);
             }
             connector.Close();
-            sql = "SELECT * FROM user-position WHERE ";
+            sql = "SELECT * FROM Positiontb WHERE Positiontb.positionid in (SELECT position FROM UserPos WHERE userid=" + UserInfo.instance.userid + ");";
             reader = connector.Select(sql);
             while(reader.Read())
             {
-                string postcode = reader.GetString(-1);
-                string description = reader.GetString(-1);
-                PositionItem position = new PositionItem(postcode, description);
+                int positionid = reader.GetInt32(0);
+                string postcode = reader.GetString(1);
+                string description = reader.GetString(2);
+                PositionItem position = new PositionItem(positionid, postcode, description);
                 this.positions.Add(position);
             }
             //fill panel
@@ -64,28 +66,25 @@ namespace Seek_Sale
                 itemPanel.Controls.Add(item);
             }
             pixely = 0;
-            int id;
-            id = 0;
             payBox = new List<CheckBox>();
             foreach (PayItem pay in this.pays)
             {
-                id++;
                 Panel panel = new Panel();
                 CheckBox checkbox = new CheckBox();
                 TextBox textbox = new TextBox();
                 panel.Location = new Point(0, pixely);
                 panel.Size = new Size(560, 25);
-                panel.Name = "PayPanel" + id.ToString();
+                panel.Name = "PayPanel" + pay.payid.ToString();
                 checkbox.Location = new Point(0, 1);
                 checkbox.Checked =  false;
                 checkbox.Text = "";
                 checkbox.Size = new Size(22, 22);
-                checkbox.Name = "PayCheckBox" + id.ToString();
+                checkbox.Name = pay.payid.ToString();
                 textbox.Location = new Point(24, 0);
                 textbox.ReadOnly = true;
                 textbox.Text = pay.cardno;
                 textbox.Size = new Size(536, 22);
-                textbox.Name = "PayTextBox" + id.ToString();
+                textbox.Name = "PayTextBox" + pay.payid.ToString();
                 this.payPpanel.Controls.Add(panel);
                 checkbox.CheckedChanged += new EventHandler(this.MyChechBox_Click);
                 panel.Controls.Add(checkbox);
@@ -93,27 +92,25 @@ namespace Seek_Sale
                 pixely += 25;
                 payBox.Add(checkbox);
             }
-            id = 0;
             positionBox = new List<CheckBox>();
             foreach (PositionItem position in this.positions)
             {
-                id++;
                 Panel panel = new Panel();
                 CheckBox checkbox = new CheckBox();
                 TextBox textbox = new TextBox();
                 panel.Location = new Point(0, pixely);
                 panel.Size = new Size(560, 25);
-                panel.Name = "PositionPanel" + id.ToString();
+                panel.Name = "PositionPanel" + position.positionid.ToString();
                 checkbox.Location = new Point(0, 1);
                 checkbox.Checked =  false;
-                checkbox.Text = "";
+                checkbox.Text = " ";
                 checkbox.Size = new Size(22, 22);
-                checkbox.Name = "PositionCheckBox" + id.ToString();
+                checkbox.Name = position.positionid.ToString();
                 textbox.Location = new Point(24, 0);
                 textbox.ReadOnly = true;
                 textbox.Text = position.description + "(" + position.postcode + ")";
                 textbox.Size = new Size(536, 22);
-                textbox.Name = "PositionTextBox" + id.ToString();
+                textbox.Name = "PositionTextBox" + position.positionid.ToString();
                 this.payPpanel.Controls.Add(panel);
                 checkbox.CheckedChanged += new EventHandler(this.MyChechBox_Click);
                 panel.Controls.Add(checkbox);
@@ -131,9 +128,37 @@ namespace Seek_Sale
             foreach (CartItem item in this.items)
             {
                 //Delete cart
-                sql = "DELETE...";
+                sql = "DELETE FROM CartItem WHERE userid = " + UserInfo.instance.userid + 
+                    "AND itemid = " + item.itemid + ";";
                 connector.Delete(sql);
+               
                 //mark for sold out
+                sql = "UPDATE Itemtb SET available = 0 WHERE itemid = " + item.itemid + ";";
+                connector.Update(sql);
+                //generate a trade record
+                int payid = 0;
+                int positionid = 0;
+                foreach (CheckBox checkbox in payBox)
+                {
+                    if(checkbox.Checked)
+                    {
+                        payid = Int32.Parse(checkbox.Name);
+                        break;
+                    }
+                }
+                 foreach (CheckBox checkbox in positionBox)
+                {
+                    if(checkbox.Checked)
+                    {
+                        positionid = Int32.Parse(checkbox.Name);
+                        break;
+                    }
+                }
+                sql = "INSERT INTO OrderRecord (positionid, itemid, payid) VALUES ("
+                + positionid.ToString() + ", "
+                + item.itemid.ToString() + ","
+                + payid.ToString() + ");";
+                connector.Insert(sql);
             }
             connector.Close();
             this.Invoke(new MessageBoxShow(MessageBoxShow_F), new object[] { "订单生成成功！" });
@@ -154,7 +179,7 @@ namespace Seek_Sale
         private void MyChechBox_Click(object sender, System.EventArgs e)
         {
             CheckBox checkbox = (CheckBox)sender;
-            if (checkbox.Name.ElementAt(1) == 'a')
+            if (checkbox.Text == "")
             {
                 //PayCheckBox
                 foreach (CheckBox paycheckbox in payBox)
@@ -176,10 +201,12 @@ namespace Seek_Sale
 
     public partial class PayItem
     {
+        public int payid;
         public string cardno;
         public bool quickpay;
-        public PayItem(string cardno, bool quickpay)
+        public PayItem(int payid, string cardno, bool quickpay)
         {
+            this.payid = payid;
             this.cardno = cardno;
             this.quickpay = quickpay;
         }
@@ -188,10 +215,12 @@ namespace Seek_Sale
 
     public partial class PositionItem
     {
+        public int positionid;
         public string postcode;
         public string description;
-        public PositionItem(string postcode, string description)
+        public PositionItem(int positionid, string postcode, string description)
         {
+            this.positionid = positionid;
             this.postcode = postcode;
             this.description = description;
         }

@@ -29,6 +29,16 @@ namespace Seek_Sale
             mainSearchForm.ControlBox = false;
             mainSearchForm.Dock = System.Windows.Forms.DockStyle.Fill;
             mainSearchForm.Show();
+            //cartForm
+            TabPage cartTabPage = new TabPage("我的购物车");
+            cartTabPage.Name = "CartTabPage";
+            this.mainTabControl.TabPages.Add(cartTabPage);
+            CartForm cartForm = new CartForm(UserInfo.instance.userid);
+            cartForm.TopLevel = false;
+            cartForm.Parent = cartTabPage;
+            cartForm.ControlBox = false;
+            cartForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            cartForm.Show();
             //itemTypeTabPage included itemTypeManageForm
             TabPage publishTabPage = new TabPage("发布新商品");
             publishTabPage.Name = "PublishTabPage";

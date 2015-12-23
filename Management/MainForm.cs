@@ -12,7 +12,9 @@ namespace Management
 {
     public partial class MainForm : Form
     {
-
+        UserManageForm userManageForm;
+        ItemTypeManageForm itemTypeManageForm;
+        ItemManageForm itemManageForm;
 
         public MainForm()
         {
@@ -25,7 +27,7 @@ namespace Management
             TabPage userTabPage = new TabPage("用户管理");
             userTabPage.Name = "UserTabPage";
             this.ManageTab.TabPages.Add(userTabPage);
-            UserManageForm userManageForm = new UserManageForm();
+            userManageForm = new UserManageForm();
             userManageForm.TopLevel = false;
             userManageForm.Parent = userTabPage;
             userManageForm.ControlBox = false;
@@ -35,7 +37,7 @@ namespace Management
             TabPage itemTypeTabPage = new TabPage("商品类别管理");
             itemTypeTabPage.Name = "ItemTypeTabPage";
             this.ManageTab.TabPages.Add(itemTypeTabPage);
-            ItemTypeManageForm itemTypeManageForm = new ItemTypeManageForm();
+            itemTypeManageForm = new ItemTypeManageForm();
             itemTypeManageForm.TopLevel = false;
             itemTypeManageForm.Parent = itemTypeTabPage;
             itemTypeManageForm.ControlBox = false;
@@ -45,7 +47,7 @@ namespace Management
             TabPage itemTabPage = new TabPage("商品管理");
             itemTabPage.Name = "UserTabPage";
             this.ManageTab.TabPages.Add(itemTabPage);
-            ItemManageForm itemManageForm = new ItemManageForm();
+            itemManageForm = new ItemManageForm();
             itemManageForm.TopLevel = false;
             itemManageForm.Parent = itemTabPage;
             itemManageForm.ControlBox = false;
@@ -58,13 +60,13 @@ namespace Management
         private void userStrip_Click(object sender, EventArgs e)
         {
             UserInfoForm userInfoForm = new UserInfoForm();
-            userInfoForm.Show();
+            userInfoForm.ShowDialog();
         }
 
         private void itemStrip_Click(object sender, EventArgs e)
         {
-            //SearchItemForm searchItemForm = new SearchItemForm();
-            //searchItemForm.Show();
+            SearchItemForm searchItemForm = new SearchItemForm();
+            searchItemForm.ShowDialog();
         }
 
         private void addStrip_Click(object sender, EventArgs e)
@@ -72,17 +74,20 @@ namespace Management
             if (ManageTab.SelectedIndex == 0)
             {
                 NewUserForm userform = new NewUserForm();
-                userform.Show();
+                userform.ShowDialog();
+                userManageForm.refresh();
             }
             else if (ManageTab.SelectedIndex == 1)
             {
-                NewItemForm typeform = new NewItemForm();
-                typeform.Show();
+                NewItemTypeForm typeform = new NewItemTypeForm();
+                typeform.ShowDialog();
+                itemTypeManageForm.refresh();
             }
             else
             {
-                NewItemTypeForm itemform = new NewItemTypeForm();
-                itemform.Show();
+                NewItemForm itemform = new NewItemForm();
+                itemform.ShowDialog();
+                itemManageForm.refresh();
             }
         }
     }

@@ -24,11 +24,11 @@ namespace Management
                 MessageBox.Show("商品名不可为空");
                 return;
             }
-            string sql = "INSERT INTO Itemtypetb (itemname,price,itemtype,description) VALUES"
+            string sql = "INSERT INTO Itemtypetb (typename,price,basictype,description) VALUES ("
                 + "\"" + nameTextBox.Text + "\"" + ", "
                 + "\"" + priceTextBox.Text + "\"" + ","
                 + "\"" + typeComboBox.Text + "\"" + ", "
-                + "\"" + describeRichTextBox.Text + "\"" + ";";
+                + "\"" + describeRichTextBox.Text + "\"" + ");";
             DBConnector connector = new DBConnector();
             connector.Insert(sql);
             connector.Close();

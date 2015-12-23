@@ -13,7 +13,7 @@ namespace Management
 {
     public partial class ItemTypeManageForm : Form
     {
-        string conn_str = "server=localhost;user id=root;password=Try2BBest;database=leftover";
+        string conn_str = "server=localhost;user id=root;password=690111;database=leftover";
         MySqlConnection conn;
         MySqlDataAdapter adapter;
         DataSet dataset;
@@ -24,6 +24,10 @@ namespace Management
         }
 
         private void ItemTypeManageForm_Load(object sender, EventArgs e)
+        {
+            this.refresh();
+        }
+        public void refresh()
         {
             try
             {
@@ -56,7 +60,6 @@ namespace Management
                 }
             }
         }
-
         private void itemtypeDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             writeback();

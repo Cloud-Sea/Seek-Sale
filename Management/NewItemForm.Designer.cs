@@ -45,86 +45,83 @@
             // typeComboBox
             // 
             this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Items.AddRange(new object[] {
-            "家用电器",
-            "手机数码",
-            "电脑办公",
-            "服装珠宝",
-            "清洁护理",
-            "运动户外",
-            "汽车养护",
-            "母婴用品",
-            "食品生鲜",
-            "票务旅行",
-            "奢侈品"});
-            this.typeComboBox.Location = new System.Drawing.Point(152, 104);
+            this.typeComboBox.Location = new System.Drawing.Point(228, 156);
+            this.typeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(351, 20);
+            this.typeComboBox.Size = new System.Drawing.Size(524, 26);
             this.typeComboBox.TabIndex = 70;
             // 
             // describeRichTextBox
             // 
-            this.describeRichTextBox.Location = new System.Drawing.Point(152, 176);
+            this.describeRichTextBox.Location = new System.Drawing.Point(228, 264);
+            this.describeRichTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.describeRichTextBox.Name = "describeRichTextBox";
-            this.describeRichTextBox.Size = new System.Drawing.Size(349, 90);
+            this.describeRichTextBox.Size = new System.Drawing.Size(522, 133);
             this.describeRichTextBox.TabIndex = 69;
             this.describeRichTextBox.Text = "";
             // 
             // priceTextBox
             // 
-            this.priceTextBox.Location = new System.Drawing.Point(152, 71);
+            this.priceTextBox.Location = new System.Drawing.Point(228, 106);
+            this.priceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(351, 21);
+            this.priceTextBox.Size = new System.Drawing.Size(524, 28);
             this.priceTextBox.TabIndex = 68;
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(152, 39);
+            this.nameTextBox.Location = new System.Drawing.Point(228, 58);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(351, 21);
+            this.nameTextBox.Size = new System.Drawing.Size(524, 28);
             this.nameTextBox.TabIndex = 67;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(81, 176);
+            this.label4.Location = new System.Drawing.Point(122, 264);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.Size = new System.Drawing.Size(98, 18);
             this.label4.TabIndex = 66;
             this.label4.Text = "商品描述：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(81, 112);
+            this.label3.Location = new System.Drawing.Point(122, 168);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.Size = new System.Drawing.Size(98, 18);
             this.label3.TabIndex = 65;
             this.label3.Text = "所属类别：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 80);
+            this.label2.Location = new System.Drawing.Point(122, 120);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
+            this.label2.Size = new System.Drawing.Size(98, 18);
             this.label2.TabIndex = 64;
             this.label2.Text = "出售价格：";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 48);
+            this.label1.Location = new System.Drawing.Point(140, 72);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 63;
             this.label1.Text = "商品名：";
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(365, 296);
+            this.cancelBtn.Location = new System.Drawing.Point(548, 444);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(112, 34);
             this.cancelBtn.TabIndex = 62;
             this.cancelBtn.Text = "取消";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -132,9 +129,10 @@
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(152, 296);
+            this.addBtn.Location = new System.Drawing.Point(228, 444);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(75, 23);
+            this.addBtn.Size = new System.Drawing.Size(112, 34);
             this.addBtn.TabIndex = 61;
             this.addBtn.Text = "添加";
             this.addBtn.UseVisualStyleBackColor = true;
@@ -143,24 +141,26 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(81, 144);
+            this.label5.Location = new System.Drawing.Point(122, 216);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.Size = new System.Drawing.Size(98, 18);
             this.label5.TabIndex = 71;
             this.label5.Text = "新旧程度：";
             // 
             // newTextBox
             // 
-            this.newTextBox.Location = new System.Drawing.Point(152, 135);
+            this.newTextBox.Location = new System.Drawing.Point(228, 202);
+            this.newTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.newTextBox.Name = "newTextBox";
-            this.newTextBox.Size = new System.Drawing.Size(351, 21);
+            this.newTextBox.Size = new System.Drawing.Size(524, 28);
             this.newTextBox.TabIndex = 72;
             // 
             // NewItemForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 362);
+            this.ClientSize = new System.Drawing.Size(876, 543);
             this.Controls.Add(this.newTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.typeComboBox);
@@ -173,6 +173,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.addBtn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NewItemForm";
             this.Text = "NewItemForm";
             this.Load += new System.EventHandler(this.NewItemForm_Load);

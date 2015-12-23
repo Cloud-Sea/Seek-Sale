@@ -43,6 +43,7 @@ namespace Management
 
         private void editable()
         {
+            usernameTextBox.ReadOnly = true;
             passwordTextBox.ReadOnly = false;
             userlevelTextBox.ReadOnly = false;
             yesRadioButton.Enabled = true;
@@ -131,17 +132,19 @@ namespace Management
             else
                 mark = "0";
             DBConnector connector = new DBConnector();
-            string sql = "UPDATE UserView (passwd,userlevel,certified,inrank,outrank,nin,nout,contact,reliable) VALUES"
-                + "\"" + passwordTextBox.Text + "\"" + ", " 
-                + userlevelTextBox.Text + ", " 
-                + mark + ", inrank=" 
-                + inrankTextBox.Text + ", " 
-                + outrankTextBox.Text + ", " 
-                + ninTextBox.Text + ", " 
-                + noutTextBox.Text + ", "
-                + "\"" + contactTextBox.Text + "\"" + ", "
-                + "\"" + reliableTextBox.Text + "\"" +
-                "WHERE username=\"" + username + "\";";
+            string sql = "UPDATE Userbasictb "
+                + "SET " + "passwd=" + "\"" + passwordTextBox.Text + "\"" + "WHERE userid=" + userid + ";";
+            connector.Update(sql);
+            sql = "UPDATE Usertradetb "
+                + "SET " + "userlevel=" + userlevelTextBox.Text + ", "
+                + "certified=" + mark + ", "
+                + "inrank=" + inrankTextBox.Text + ", "
+                + "outrank=" + outrankTextBox.Text + ", "
+                + "nin=" + ninTextBox.Text + ", "
+                + "nout=" + noutTextBox.Text + ", "
+                + "contact=" + "\"" + contactTextBox.Text + "\"" + ", "
+                + "reliable=" + "\"" + reliableTextBox.Text + "\""
+                + "WHERE userid=" + userid + ";";
             connector.Update(sql);
             connector.Close();
             searchable();
