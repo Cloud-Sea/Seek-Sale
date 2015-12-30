@@ -132,16 +132,18 @@
             this.typeComboBox.FormattingEnabled = true;
             this.typeComboBox.Items.AddRange(new object[] {
             "家用电器",
-            "手机数码",
+            "手机、数码、摄影",
             "电脑办公",
-            "服装珠宝",
-            "清洁护理",
+            "服装、鞋靴、箱包",
+            "家居、厨具、家装",
+            "图书",
+            "美妆、个护健康",
             "运动户外",
             "汽车养护",
             "母婴用品",
-            "食品生鲜",
+            "食品、酒水、生鲜",
             "票务旅行",
-            "奢侈品"});
+            "钟表、首饰"});
             this.typeComboBox.Location = new System.Drawing.Point(220, 152);
             this.typeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.typeComboBox.Name = "typeComboBox";

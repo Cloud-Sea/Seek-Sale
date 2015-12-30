@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCommentForm.Designer.cs">
+      <DependentUpon>AddCommentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CartForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,11 +105,47 @@
     <Compile Include="MainSearchForm.Designer.cs">
       <DependentUpon>MainSearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyPayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyPayForm.Designer.cs">
+      <DependentUpon>ModifyPayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyPosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyPosForm.Designer.cs">
+      <DependentUpon>ModifyPosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderItem.Designer.cs">
+      <DependentUpon>OrderItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="PayForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PayForm.Designer.cs">
       <DependentUpon>PayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PayItem.Designer.cs">
+      <DependentUpon>PayItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PosItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PosItem.Designer.cs">
+      <DependentUpon>PosItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,6 +156,9 @@
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInfo.cs" />
+    <EmbeddedResource Include="AddCommentForm.resx">
+      <DependentUpon>AddCommentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CartForm.resx">
       <DependentUpon>CartForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,8 +186,26 @@
     <EmbeddedResource Include="MainSearchForm.resx">
       <DependentUpon>MainSearchForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModifyPayForm.resx">
+      <DependentUpon>ModifyPayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyPosForm.resx">
+      <DependentUpon>ModifyPosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderItem.resx">
+      <DependentUpon>OrderItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PayForm.resx">
       <DependentUpon>PayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayItem.resx">
+      <DependentUpon>PayItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PosItem.resx">
+      <DependentUpon>PosItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
